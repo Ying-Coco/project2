@@ -1,4 +1,3 @@
-//
 //  Player.hpp
 //
 
@@ -7,8 +6,8 @@
 #include <stdio.h>
 #include <string>
 
-#include "Die.hpp"
-#include "GameBoard.hpp"
+#include "Die.h"
+#include "GameBoard.h"
 
 using namespace std;
 
@@ -21,16 +20,22 @@ public:
    // player's initial position is at the figurative square 0
    // TO DO: implement this constructor
    Player(string name) {
-      // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //// TODO: implement this function properly
+      //throw std::logic_error("not implemented yet");
+	  playerName = name;
+	  position=0;
+	  die;
    }
    
    // copy constructor
    // Player should make player's own copy of the die
    // TO DO: implement Player's copy constructor
    Player(const Player &p) {
-      // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //// TODO: implement this function properly
+      //throw std::logic_error("not implemented yet");
+	  playerName = p.playerName;
+	  position=p.position;
+	  die=p.die;
    }
    
    // assignment constructor
