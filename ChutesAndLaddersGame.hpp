@@ -8,13 +8,13 @@
 #include <string>
 
 #include "ArrayQueue.h"
-#include "Player.hpp"
-#include "GameBoard.hpp"
+#include "Player.h"
+#include "GameBoard.h"
 
 using namespace std;
 
 // TO DO - change the default value to the number of your team members
-const int MIN_NUMBER_OF_PLAYERS = 2;
+const int MIN_NUMBER_OF_PLAYERS = 3;
 
 class ChutesAndLaddersGame {
 public:
@@ -29,8 +29,9 @@ public:
    // accessors
    // TO DO: implement the accessor to get the number Of Players
    long getNumberOfPlayers() {
-      // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //// TODO: implement this function properly
+      //throw std::logic_error("not implemented yet");
+	  return gamePlayers.size();
    }
    string getWinner() { return winner; }
    
@@ -42,10 +43,11 @@ public:
    // play the Chutes and Ladders game
    void playGame();
 private:
-   const int WINNING_POSITION = 100;
+   static const int WINNING_POSITION = 100;
    
    string winner;       // the winner
    GameBoard gameBoard; // the game board
 
    // TO DO: use ArrayQueue to store the players
+   ArrayQueue<Player> gamePlayers;
 };
